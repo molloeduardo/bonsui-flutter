@@ -1,5 +1,5 @@
 <div align="center" class="sidebar-logo">
-  <a href="/"><img src="_media/logo.png"></a>
+  <a href="./"><img src="_media/logo.png"></a>
 </div>
 
 <a class="mobile-coffee-link" href="https://www.buymeacoffee.com/eduardo_codes" target="_blank" rel="noreferrer" data-coffee-button="" aria-label="Buy me a coffee">
