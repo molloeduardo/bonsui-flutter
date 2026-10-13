@@ -1,0 +1,28 @@
+# Empty State
+
+---
+
+<div class="smartphone-container">
+    <iframe src="https://www.eduardomollo.com/projects/bonsui/?screen=empty-state" class="iframe-device" style="height: 216px !important;"></iframe>
+</div>
+
+## Example
+
+```dart
+ BonsuiEmptyState(
+    title: 'No Data Available',
+    description: 'There is currently no data to display.',
+    icon: BonsuiIcons.error,
+    padding: EdgeInsets.only(top: 20, left: 30, right: 30),
+);
+```
+
+## Properties
+| Property | Type | Description | Mandatory |
+| --------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `icon` | `IconData` | The icon to show at the top of the empty state. Default is **BonsuiIcons.closeCircle** | ❌ |
+| `iconChild` | `Widget` | Custom widget to show at the top of the empty state | ❌ |
+| `title` | `String` | Empty state title | ❌ |
+| `description` | `String` | Empty state description | ❌ |
+| `child` | `Widget` | Custom widget to show at the end of the empty state | ❌ |
+| `padding` | `EdgeInsets` | Empty state padding | ❌ |

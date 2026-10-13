@@ -1,0 +1,34 @@
+# Rating
+
+---
+
+<div class="smartphone-container">
+    <iframe src="https://www.eduardomollo.com/projects/bonsui/?screen=rating" class="iframe-device" style="height: 120px !important;"></iframe>
+</div>
+
+## Example
+
+```dart
+int rating = 2;
+
+BonsuiRating(
+    rating: rating,
+    max: 6,
+    onTap: (rating) {
+        setState(() {
+            rating1 = rating;
+        });
+    },
+);
+```
+
+## Properties
+| Property | Type | Description | Mandatory |
+| --------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `rating` | `int` | The value of the rating | ✅ |
+| `max` | `int` | Maximum rating. Default is **5** | ❌ |
+| `icon` | `IconData` | The icon to show as rating. Default is **BonsuiIcons.star** | ❌ |
+| `color` | `Color` | The rating color. Default is **Colors.yellow.shade600** | ❌ |
+| `disabled` | `bool` | If set to true the user can't change the rating | ❌ |
+| `onTap` | `Function(int)` | Emits an event when the user changes the rating. Returns the current rating | ❌ |
+| `size` | `double` | Icon size. Default is 30 | ❌ |

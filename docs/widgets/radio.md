@@ -1,0 +1,53 @@
+# Radio
+
+---
+
+It replaces the default **Radio** widget in order to implement custom logic and different UI based on the OS.
+
+<div class="smartphone-container">
+    <iframe src="https://www.eduardomollo.com/projects/bonsui/?screen=radio" class="iframe-device"></iframe>
+</div>
+
+## Example
+
+```dart
+String selectedValue = 'one';
+
+Column(
+  children: [
+    BonsuiRadio(
+      value: 'one',
+      groupValue: selectedValue,
+      label: 'Option One',
+      onChanged: (value) {
+        setState(() {
+          selectedValue = value;
+        });
+      },
+    ),
+    BonsuiRadio(
+      value: 'two',
+      groupValue: selectedValue,
+      label: 'Option Two',
+      onChanged: (value) {
+        setState(() {
+          selectedValue = value;
+        });
+      },
+    ),
+  ],
+);
+```
+
+## Properties
+
+| Property     | Type                | Description                                                                                                               | Mandatory |
+| ------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `value`      | `dynamic`           | The **value** associated with the radio button. Must match the type of **groupValue**                                     | ✅        |
+| `groupValue` | `dynamic`           | The **group value**. If equal to **value**, the radio appears selected                                                    | ✅        |
+| `onChanged`  | `Function(dynamic)` | Called when the user selects the radio option. Returns the selected value                                                 | ✅        |
+| `color`      | `Color`             | The **color** of the selected radio. Default: **BonsuiDesign.primaryColor** or **BonsuiDesign.disabledColor** if disabled | ❌        |
+| `label`      | `String`            | If set it shows a label next to the radio                                                                                 | ❌        |
+| `disabled`   | `bool`              | If **true**, the radio is disabled and cannot be selected                                                                 | ❌        |
+| `size`       | `double`            | Radio width and height                                                                                                    | ❌        |
+| `icon`       | `IconData`          | Icon to show inside the radio when selected. Default is **BonsuiIcons.circle**                                            | ❌        |

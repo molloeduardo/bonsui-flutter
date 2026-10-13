@@ -1,0 +1,35 @@
+# Slider
+
+---
+
+It replaces the default **Slider** widget in order to implement custom logic and different UI based on the OS.
+
+<div class="smartphone-container">
+    <iframe src="https://www.eduardomollo.com/projects/bonsui/?screen=slider" class="iframe-device" style="height: 180px !important;"></iframe>
+</div>
+
+## Example
+
+```dart
+double value = 20;
+
+BonsuiSlider(
+    value: value,
+    min: 10,
+    max: 100,
+    onChanged(value) {
+       // Do something...
+    }
+);
+```
+
+## Properties
+| Property | Type | Description | Mandatory |
+| --------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `onChanged` | `Function(double)` | Emits an event when the user interacts with the slider. Returns the value | ❌ |
+| `thumbColor` | `Color` | Defines the color of the thumb slider | ❌ |
+| `activeColor` | `Color` |The color to use for the portion of the slider that has been selected.| ❌ |
+| `min` | `double` | The minimum value | ❌ |
+| `max` | `double` | The maximum value | ❌ |
+| `value` | `double` | The current value | ❌ |
+| `disabled` | `bool` | If set to true the user can't intercat | ❌ |

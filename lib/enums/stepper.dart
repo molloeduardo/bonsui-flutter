@@ -1,0 +1,1 @@
+enum BonsuiStepperSeparatorType { dots, line }

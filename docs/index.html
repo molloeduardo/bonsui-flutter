@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bonsui - Flutter Library Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description"
+    content="The Bonsui Flutter Library is designed to accelerate your app development workflow. It provides a rich collection of efficient and visually appealing UI components, ready-to-use screens, and practical services, including powerful tools for forms validation.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="logo-icon-dark.png" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+
+<body>
+  <style>
+    .button,
+    .button-outline {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px transparent;
+      padding: 1.2rem 1.2rem 1.2rem 1.2rem !important;
+      border-radius: 12px;
+      background-color: #0095FE;
+      color: white !important;
+      transition: background-color 0.2s ease;
+      font-weight: 600 !important;
+      font-size: 1rem !important;
+      letter-spacing: 0.06rem !important;
+      text-decoration: none !important;
+      line-height: 0;
+    }
+
+    .button:hover,
+    .button-outline:hover {
+      cursor: pointer;
+      background-color: #007ACC;
+    }
+
+    .button-outline {
+      background-color: transparent;
+      border: 1px solid #0095FE;
+      color: #0095FE !important;
+    }
+
+    .button-outline:hover {
+      background-color: #0095FE;
+      color: white !important;
+    }
+
+    .link {
+      color: #0095FE !important;
+      text-decoration: underline !important;
+    }
+
+    .link:hover {
+      color: #007ACC !important;
+    }
+
+    .flex,
+    .navbar-container {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .smartphone-container {
+      position: relative;
+      width: 450px;
+    }
+
+    .smartphone-container::after {
+      content: "Interactive sample";
+      position: absolute;
+      right: 0.75rem;
+      bottom: 0.5rem;
+      z-index: 1;
+      padding: 0.35rem 0.6rem;
+      border-radius: 4px;
+      background-color: #D0D0D0;
+      font-size: 0.75rem;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    .laptop-container {
+      width: 100%;
+    }
+
+    .content {
+      margin-top: 2rem;
+    }
+
+    strong {
+      color: #007ACC !important;
+    }
+
+    .coffee-link {
+      position: relative;
+      top: 2px;
+    }
+
+    .mobile-coffee-link {
+      display: none;
+    }
+
+    .sidebar-logo {
+      width: 80%;
+      margin: auto;
+    }
+
+    .sidebar-logo img {
+      width: 70%;
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-container p {
+      width: 100px;
+    }
+
+    .main-buttons-container {
+      margin-bottom: 2rem;
+    }
+
+    .sidebar-divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 1rem 0;
+    }
+
+    .before-after-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 500px;
+      overflow-y: auto;
+      border-radius: 1rem;
+    }
+
+    .before-after-container .divider {
+      width: 2px;
+      height: 100%;
+      background-color: #eee;
+    }
+
+    .before-after-container img {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      height: 500px;
+    }
+
+    .iframe-device {
+      box-shadow: none;
+    }
+
+    .new-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .new {
+      background-color: #0095FE;
+      color: white;
+      width: 33px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .search {
+        margin-top: 4rem !important;
+      }
+
+      .sidebar-toggle {
+        top: 0.8rem !important;
+        bottom: auto !important;
+        padding: 1rem !important;
+      }
+
+      .mobile-coffee-link {
+        display: block;
+        width: fit-content;
+        margin: 1rem auto;
+      }
+
+      .mobile-coffee-link img {
+        display: block;
+        width: 200px !important;
+        max-width: 100% !important;
+        height: auto;
+      }
+
+      .navbar-container .coffee-link {
+        display: none;
+      }
+
+      .markdown-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      .navbar-container .button,
+      .navbar-container .button-outline {
+        max-width: 100px;
+      }
+
+      .flex {
+        flex-direction: column;
+      }
+
+      .flex-center {
+        flex-direction: column;
+      }
+
+      .button,
+      .button-outline {
+        width: 100% !important;
+        text-align: center !important;
+      }
+
+      .smartphone-container,
+      .laptop-container {
+        width: 105%;
+      }
+
+      iframe {
+        height: 800px !important;
+      }
+
+      .content {
+        margin-top: 3rem;
+      }
+    }
+  </style>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '',
+      repo: '',
+      loadNavbar: true,
+      loadSidebar: true,
+      autoSidebar: true,
+      subMaxLevel: 2,
+      themeColor: '#0095FE',
+      search: {
+        paths: 'auto',
+        placeholder: 'Search...',
+        noData: 'No results found',
+        depth: 3
+      },
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify-auto-sidebar/dist/docsify-auto-sidebar.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.22/components/prism-dart.min.js"></script>
+  <script src="https://unpkg.com/docsify-copy-code@2"></script>
+  <!-- Other -->
+</body>
+
+</html>
