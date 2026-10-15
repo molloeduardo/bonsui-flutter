@@ -1,7 +1,6 @@
 import 'package:bonsui/bonsui.dart';
 import 'package:bonsui/utils.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui';
 
 class BonsuiCard extends StatelessWidget {
   const BonsuiCard({
@@ -66,8 +65,12 @@ class BonsuiCard extends StatelessWidget {
               ),
               padding: padding ?? const EdgeInsets.all(20),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: child == null
+                    ? MainAxisAlignment.center
+                    : MainAxisAlignment.start,
+                crossAxisAlignment: child == null
+                    ? CrossAxisAlignment.center
+                    : CrossAxisAlignment.start,
                 children: [
                   icon != null
                       ? Padding(
