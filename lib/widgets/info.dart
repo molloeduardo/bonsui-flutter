@@ -9,6 +9,7 @@ class BonsuiInfo extends StatelessWidget {
     this.description,
     this.icon,
     this.iconColor,
+    this.iconChild,
     this.fontSize,
     this.color,
     this.type,
@@ -21,6 +22,7 @@ class BonsuiInfo extends StatelessWidget {
   final String? description;
   final IconData? icon;
   final Color? iconColor;
+  final Widget? iconChild;
   final double? fontSize;
   final Color? color;
   final BonsuiInfoType? type;
@@ -52,11 +54,12 @@ class BonsuiInfo extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(right: BonsuiDesign.spacing * 2),
-            child: Icon(
-              _getIcon(),
-              size: fontSize != null ? fontSize! * 1.8 : 24,
-              color: _getIconColor(),
-            ),
+            child: iconChild ??
+                Icon(
+                  _getIcon(),
+                  size: fontSize != null ? fontSize! * 1.8 : 24,
+                  color: _getIconColor(),
+                ),
           ),
           Expanded(
             child: Column(
@@ -68,17 +71,18 @@ class BonsuiInfo extends StatelessWidget {
                   BonsuiText(
                     title!,
                     weight: FontWeight.w700,
-                    color: BonsuiDesign.textColor,
+                    color: _getIconColor(),
                     size: fontSize != null ? fontSize! + 1 : 15,
+                    lineHeight: 0,
                   ),
                 if (description != null)
                   BonsuiText(
                     description!,
-                    color: BonsuiDesign.textColorLight,
+                    color: _getIconColor(),
                     weight: FontWeight.w500,
                     size: fontSize ?? 14,
-                    padding: const EdgeInsets.only(top: 4),
-                    lineHeight: 0,
+                    padding: EdgeInsets.only(top: title != null ? 4 : 0),
+                    lineHeight: 1.3,
                   ),
                 if (child != null) child!,
               ],
@@ -135,22 +139,22 @@ class BonsuiInfo extends StatelessWidget {
       case BonsuiInfoType.success:
         return BonsuiUtils.lighten(
           BonsuiDesign.successColor,
-          0.3,
+          0.45,
         );
       case BonsuiInfoType.warning:
         return BonsuiUtils.lighten(
           BonsuiDesign.warningColor,
-          0.3,
+          0.36,
         );
       case BonsuiInfoType.error:
         return BonsuiUtils.lighten(
           BonsuiDesign.dangerColor,
-          0.3,
+          0.36,
         );
       case BonsuiInfoType.info:
         return BonsuiUtils.lighten(
           BonsuiDesign.infoColor,
-          0.3,
+          0.38,
         );
       default:
         return const Color(0xffF9F9FB);
