@@ -1,6 +1,5 @@
 import 'package:bonsui/bonsui.dart';
 import 'package:bonsui/enums/animation.dart';
-import 'package:bonsui/icons.dart';
 import 'package:flutter/material.dart';
 
 class BonsuiRating extends StatefulWidget {
