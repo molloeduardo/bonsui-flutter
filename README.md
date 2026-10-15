@@ -1,6 +1,22 @@
 <br>
 <div align="center" class="main-logo">
-  <img src="https://www.eduardomollo.com/projects/bonsui/logo.png" width="250">
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://www.eduardomollo.com/projects/bonsui/logo-white.png"
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://www.eduardomollo.com/projects/bonsui/logo.png"
+  />
+
+<img
+    alt="Bonsui Logo"
+    src="https://www.eduardomollo.com/projects/bonsui/logo.png"
+    width="250"
+  />
+</picture>
+
 </div>
 <br>
 <hr>
@@ -33,9 +49,6 @@ Run this command in your Flutter project to install the library
 flutter pub add bonsui
 ```
 
-> [!NOTE]
-> If you want to use the ready-to-use screens you need to add the [animate_do](https://pub.dev/packages/animate_do) package
-
 ## Import
 
 Import the global library file, or the single ones.
@@ -53,7 +66,7 @@ Some **components**, **screens** and **services** have external packages depende
 
 | Components / Screens / Services                                                                     | Dependencies                                                                                                                                                                                |
 | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `BonsuiScaffold. All the screens`                                                                   | [animate_do](https://pub.dev/packages/animate_do)                                                                                                                                           |
+| `BonsuiScaffold. All the ready-to-use screens`                                                      | [animate_do](https://pub.dev/packages/animate_do)                                                                                                                                           |
 | `BonsuiUtils.openUrl, BonsuiLink, BonsuiPaywallScreen, BonsuiRegistrationScreen, BonsuiLoginScreen` | [url_launcher](https://pub.dev/packages/url_launcher)                                                                                                                                       |
 | `BonsuiPaywallScreen`                                                                               | [intl](https://pub.dev/packages/intl)                                                                                                                                                       |
 | `BonsuiSupabaseService`                                                                             | [supabase_flutter](https://pub.dev/packages/supabase_flutter), [google_sign_in](https://pub.dev/packages/google_sign_in), [sign_in_with_apple](https://pub.dev/packages/sign_in_with_apple) |
