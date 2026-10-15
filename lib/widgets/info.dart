@@ -139,7 +139,7 @@ class BonsuiInfo extends StatelessWidget {
       case BonsuiInfoType.success:
         return BonsuiUtils.lighten(
           BonsuiDesign.successColor,
-          0.45,
+          0.42,
         );
       case BonsuiInfoType.warning:
         return BonsuiUtils.lighten(
@@ -154,7 +154,7 @@ class BonsuiInfo extends StatelessWidget {
       case BonsuiInfoType.info:
         return BonsuiUtils.lighten(
           BonsuiDesign.infoColor,
-          0.38,
+          0.32,
         );
       default:
         return const Color(0xffF9F9FB);
