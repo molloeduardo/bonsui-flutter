@@ -1,21 +1,17 @@
 <br>
 <div align="center" class="main-logo">
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://www.eduardomollo.com/projects/bonsui/logo-white.png"
-  />
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://www.eduardomollo.com/projects/bonsui/logo.png"
-  />
-
-<img
-    alt="Bonsui Logo"
-    src="https://www.eduardomollo.com/projects/bonsui/logo.png"
+<p align="center">
+  <img
+    src="https://www.eduardomollo.com/projects/bonsui/logo-white.png#gh-dark-mode-only"
     width="250"
+    alt="Bonsui Logo"
   />
-</picture>
+  <img
+    src="https://www.eduardomollo.com/projects/bonsui/logo.png#gh-light-mode-only"
+    width="250"
+    alt="Bonsui Logo"
+  />
+</p>
 
 </div>
 <br>
