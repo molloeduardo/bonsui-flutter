@@ -168,8 +168,7 @@ class _BonsuiSignInScreenState extends State<BonsuiSignInScreen> {
                               disabled: widget.isLoading ?? false,
                               customPrefix: const Padding(
                                   padding: EdgeInsets.only(right: 5),
-                                  child: SizedBox() // TODO
-                                  ),
+                                  child: SizedBox()),
                               type: BonsuiButtonType.outlined,
                               label:
                                   Localization.getValue('continue_with_google'),
@@ -192,10 +191,9 @@ class _BonsuiSignInScreenState extends State<BonsuiSignInScreen> {
                             child: BonsuiButton(
                               minSize: const Size(double.infinity, 50),
                               disabled: widget.isLoading ?? false,
-                              customPrefix: Padding(
-                                  padding: const EdgeInsets.only(right: 5),
-                                  child: SizedBox() // TODO
-                                  ),
+                              customPrefix: const Padding(
+                                  padding: EdgeInsets.only(right: 5),
+                                  child: SizedBox()),
                               color: BonsuiDesign.useDarkMode
                                   ? BonsuiDesign.whiteColor
                                   : BonsuiDesign.blackColor,
@@ -223,8 +221,7 @@ class _BonsuiSignInScreenState extends State<BonsuiSignInScreen> {
                               disabled: widget.isLoading ?? false,
                               customPrefix: const Padding(
                                   padding: EdgeInsets.only(right: 5),
-                                  child: SizedBox() // TODO
-                                  ),
+                                  child: SizedBox()),
                               type: BonsuiButtonType.outlined,
                               label: Localization.getValue(
                                   'continue_with_facebook'),
@@ -250,8 +247,7 @@ class _BonsuiSignInScreenState extends State<BonsuiSignInScreen> {
                               disabled: widget.isLoading ?? false,
                               customPrefix: const Padding(
                                   padding: EdgeInsets.only(right: 5),
-                                  child: SizedBox() // TODO
-                                  ),
+                                  child: SizedBox()),
                               type: BonsuiButtonType.outlined,
                               label: Localization.getValue(
                                   'continue_with_linkedin'),

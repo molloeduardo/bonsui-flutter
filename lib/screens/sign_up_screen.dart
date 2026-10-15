@@ -13,7 +13,7 @@ class BonsuiSignUpScreen extends StatefulWidget {
     this.thirdPartAuthTypes,
     this.onThirdPartSignUp,
     required this.onSignUp,
-    required this.onSignIn,
+    this.onSignIn,
     this.termsOfServiceUrl,
     this.privacyPolicyUrl,
     this.signUpEnabled,
@@ -223,8 +223,7 @@ class _BonsuiSignUpScreenState extends State<BonsuiSignUpScreen> {
                                     minSize: const Size(double.infinity, 50),
                                     customPrefix: const Padding(
                                         padding: EdgeInsets.only(right: 5),
-                                        child: SizedBox() // TODO
-                                        ),
+                                        child: SizedBox()),
                                     disabled: _isCreating(),
                                     type: BonsuiButtonType.outlined,
                                     label: Localization.getValue(
@@ -249,11 +248,9 @@ class _BonsuiSignUpScreenState extends State<BonsuiSignUpScreen> {
                                     ),
                                     child: BonsuiButton(
                                       minSize: const Size(double.infinity, 50),
-                                      customPrefix: Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 5),
-                                          child: SizedBox() // TODO
-                                          ),
+                                      customPrefix: const Padding(
+                                          padding: EdgeInsets.only(right: 5),
+                                          child: SizedBox()),
                                       color: BonsuiDesign.useDarkMode
                                           ? BonsuiDesign.whiteColor
                                           : BonsuiDesign.blackColor,
@@ -283,8 +280,7 @@ class _BonsuiSignUpScreenState extends State<BonsuiSignUpScreen> {
                                       minSize: const Size(double.infinity, 50),
                                       customPrefix: const Padding(
                                           padding: EdgeInsets.only(right: 5),
-                                          child: SizedBox() // TODO
-                                          ),
+                                          child: SizedBox()),
                                       disabled: _isCreating(),
                                       type: BonsuiButtonType.outlined,
                                       label: Localization.getValue(
@@ -312,8 +308,7 @@ class _BonsuiSignUpScreenState extends State<BonsuiSignUpScreen> {
                                       minSize: const Size(double.infinity, 50),
                                       customPrefix: const Padding(
                                           padding: EdgeInsets.only(right: 5),
-                                          child: SizedBox() // TODO
-                                          ),
+                                          child: SizedBox()),
                                       disabled: _isCreating(),
                                       type: BonsuiButtonType.outlined,
                                       label: Localization.getValue(
