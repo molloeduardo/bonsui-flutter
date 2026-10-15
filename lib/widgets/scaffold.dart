@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:collection';
-import 'package:animate_do/animate_do.dart';
 import 'package:bonsui/bonsui.dart';
 import 'package:bonsui/enums/animation.dart';
 import 'package:bonsui/utils.dart';
@@ -25,6 +24,8 @@ class BonsuiScaffold extends StatefulWidget {
     this.padding,
     this.onPop,
     this.canPop,
+    this.isLoading,
+    this.loadingChild,
   });
 
   final BonsuiAppBar? appBar;
@@ -40,6 +41,8 @@ class BonsuiScaffold extends StatefulWidget {
   final EdgeInsets? padding;
   final PopInvokedWithResultCallback<dynamic>? onPop;
   final bool? canPop;
+  final bool? isLoading;
+  final Widget? loadingChild;
 
   @override
   State<BonsuiScaffold> createState() => BonsuiScaffoldState();
@@ -171,16 +174,11 @@ class BonsuiScaffoldState extends State<BonsuiScaffold>
           right: 16,
           child: Material(
             color: Colors.transparent,
-            child: FadeInDown(
-              from: 30,
-              duration: animDur,
-              child: FadeOutUp(
-                from: 60,
-                duration: animDur,
-                delay: hold,
-                child: BonsuiNotificationBanner(
-                  notification: item.notification,
-                ),
+            child: _NotificationAnimation(
+              enterDuration: animDur,
+              holdDuration: hold,
+              child: BonsuiNotificationBanner(
+                notification: item.notification,
               ),
             ),
           ),
@@ -256,6 +254,12 @@ class BonsuiScaffoldState extends State<BonsuiScaffold>
   }
 
   Widget _getBody() {
+    if (widget.isLoading == true) {
+      return widget.loadingChild ??
+          const Center(
+              child: BonsuiCircularProgressIndicator(
+                  size: BonsuiProgressIndicatorSize.large));
+    }
     if (widget.scrollable == true) {
       final scrollView = SingleChildScrollView(
         padding: _getPadding(),
@@ -278,5 +282,74 @@ class BonsuiScaffoldState extends State<BonsuiScaffold>
     }
 
     return EdgeInsets.zero;
+  }
+}
+
+class _NotificationAnimation extends StatefulWidget {
+  const _NotificationAnimation({
+    required this.enterDuration,
+    required this.holdDuration,
+    required this.child,
+  });
+
+  final Duration enterDuration;
+  final Duration holdDuration;
+  final Widget child;
+
+  @override
+  State<_NotificationAnimation> createState() => _NotificationAnimationState();
+}
+
+class _NotificationAnimationState extends State<_NotificationAnimation>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  late final Animation<double> _enterAnimation;
+  late final Animation<double> _exitAnimation;
+  late final double _exitStart;
+
+  @override
+  void initState() {
+    super.initState();
+    final exitDuration = widget.enterDuration;
+    final exitStart = widget.enterDuration + widget.holdDuration;
+    final totalDuration = exitStart + exitDuration;
+    final enterEnd =
+        widget.enterDuration.inMicroseconds / totalDuration.inMicroseconds;
+    _exitStart = exitStart.inMicroseconds / totalDuration.inMicroseconds;
+
+    _controller = AnimationController(vsync: this, duration: totalDuration);
+    _enterAnimation = _controller.drive(
+      CurveTween(curve: Interval(0, enterEnd, curve: Curves.easeOut)),
+    );
+    _exitAnimation = _controller.drive(
+      CurveTween(curve: Interval(_exitStart, 1, curve: Curves.easeIn)),
+    );
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      child: widget.child,
+      builder: (context, child) {
+        final opacity = _enterAnimation.value * (1 - _exitAnimation.value);
+        final offset = Offset(
+          0,
+          -30 * (1 - _enterAnimation.value) - 60 * _exitAnimation.value,
+        );
+
+        return Opacity(
+          opacity: opacity,
+          child: Transform.translate(offset: offset, child: child),
+        );
+      },
+    );
   }
 }
