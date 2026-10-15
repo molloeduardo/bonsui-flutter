@@ -24,6 +24,7 @@ BonsuiInfo(
 | `title` | `String` | Info alert title | ❌ |
 | `description` | `String` | Info alert description | ❌ |
 | `icon` | `IconData` | Info alert custom icon | ❌ |
+| `iconChild` | `Widget` | Info alert custom widget as an icon | ❌ |
 | `iconColor` | `Color` | Info alert custom icon color | ❌ |
 | `fontSize` | `double` | It changes the font size for the icon, title and description automatically | ❌ |
 | `color` | `Color` | Info alert custom background color | ❌ |

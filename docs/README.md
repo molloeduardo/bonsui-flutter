@@ -64,8 +64,6 @@ Run this command in your Flutter project to install the library
 flutter pub add bonsui
 ```
 
-!> If you want to use the ready-to-use screens you need to add the [animate_do](https://pub.dev/packages/animate_do) package
-
 ## Import
 
 Import the global library file, or the single ones.
@@ -83,7 +81,7 @@ Some **components**, **screens** and **services** have external packages depende
 
 | Components / Screens / Services                                                                     | Dependencies                                                                                                                                                                                |
 | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `BonsuiScaffold. All the screens`                                                                   | [animate_do](https://pub.dev/packages/animate_do)                                                                                                                                           |
+| `All the ready-to-use screens`                                                                      | [animate_do](https://pub.dev/packages/animate_do)                                                                                                                                           |
 | `BonsuiUtils.openUrl, BonsuiLink, BonsuiPaywallScreen, BonsuiRegistrationScreen, BonsuiLoginScreen` | [url_launcher](https://pub.dev/packages/url_launcher)                                                                                                                                       |
 | `BonsuiPaywallScreen`                                                                               | [intl](https://pub.dev/packages/intl)                                                                                                                                                       |
 | `BonsuiSupabaseService`                                                                             | [supabase_flutter](https://pub.dev/packages/supabase_flutter), [google_sign_in](https://pub.dev/packages/google_sign_in), [sign_in_with_apple](https://pub.dev/packages/sign_in_with_apple) |

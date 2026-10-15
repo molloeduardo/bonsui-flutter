@@ -2,12 +2,6 @@
 
 ---
 
-- [Scaffold](widgets/scaffold.md)
-- [Bottom Navigation Bar](widgets/bottom-navigation-bar.md)
-- [App Bar](widgets/app-bar.md)
-- [Heading](widgets/heading.md)
-- [Text](widgets/text.md)
-- [Icons](widgets/icons.md)
 - [Button](widgets/button.md)
 - [Text Field](widgets/text-field.md)
 - [Digits Text Field](widgets/digits-text-field.md)
@@ -38,4 +32,10 @@
 - [Rating](widgets/rating.md)
 - [Settings Group](widgets/settings-group.md)
 - [Stepper](widgets/stepper.md)
+- [Scaffold](widgets/scaffold.md)
+- [Bottom Navigation Bar](widgets/bottom-navigation-bar.md)
+- [App Bar](widgets/app-bar.md)
+- [Heading](widgets/heading.md)
+- [Text](widgets/text.md)
+- [Icons](widgets/icons.md)
 - [Cached Network Image](widgets/cached-network-image.md)
