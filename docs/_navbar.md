@@ -1,5 +1,5 @@
 <div class="navbar-container">
-    <a class="link" href="https://pub.dev/packages/bonsui/versions" target="_blank">Version 1.1.1</a>
+    <a class="link" href="https://pub.dev/packages/bonsui/changelog" target="_blank">Version 1.1.1</a>
     <a class="button-outline" href="https://pub.dev/packages/bonsui/" target="_blank">pub.dev</a>
     <a class="button" href="https://github.com/molloeduardo/bonsui-flutter" target="_blank">GitHub</a>
     <a class="coffee-link active" href="https://www.buymeacoffee.com/eduardo_codes" target="_blank" rel="noreferrer" data-coffee-button="" aria-label="Buy me a coffee">

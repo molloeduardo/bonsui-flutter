@@ -26,9 +26,9 @@ While focusing on productivity, the library also emphasizes **design consistency
 
 <br>
 
-# Example: before and after
+# Examples: before and after
 
-A multiplatform button created without and with the library.
+Multiplatform components created without and with the library.
 
 <div class="flex-center">
     <div class="laptop-container">
