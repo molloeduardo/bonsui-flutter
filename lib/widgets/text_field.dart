@@ -481,9 +481,7 @@ class _BonsuiTextFieldState extends State<BonsuiTextField> {
           focusedBorder: OutlineInputBorder(
             borderRadius: _getBorderRadius(),
             borderSide: BorderSide(
-              color: widget.hideFocusState != null && widget.hideFocusState!
-                  ? Colors.transparent
-                  : widget.color ?? BonsuiDesign.primaryColor,
+              color: _getBorderColor(),
               width: 1,
             ),
           ),
@@ -517,7 +515,9 @@ class _BonsuiTextFieldState extends State<BonsuiTextField> {
   }
 
   dynamic _onTap() {
-    if (widget.options != null) {
+    if (widget.options != null &&
+        (widget.disabled == null || !widget.disabled!) &&
+        (widget.readonly == null || !widget.readonly!)) {
       return () {
         if (BonsuiUtils.isIos()) {
           showCupertinoModalPopup(
