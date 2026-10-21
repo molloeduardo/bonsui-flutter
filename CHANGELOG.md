@@ -1,3 +1,40 @@
+## [1.2.0] - 2026-10-21
+
+### Added
+
+- New Chart Widget types: pie, donut
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- Text Field Widget option type disabled state
+- Text Field Widget border color on disabled state
+
+### Deprecated
+
+- N/A
+
+### Removed
+
+- N/A
+
+### Security
+
+- N/A
+
+### Code
+
+- N/A
+
+### Other
+
+- N/A
+
+---
+
 ## [1.1.1] - 2026-10-15
 
 ### Added
