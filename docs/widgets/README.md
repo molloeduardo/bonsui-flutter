@@ -13,7 +13,7 @@
 - [Slider](widgets/slider.md)
 - [Slider Picker](widgets/slider-picker.md)
 - [Toggle Buttons](widgets/toggle-buttons.md)
-- [ <div class="new-container">Chart<div class="new">New</div></div>](widgets/chart.md)
+- [ <div class="new-container">Charts<div class="new">New</div></div>](widgets/chart.md)
 - [Color Picker](widgets/color-picker.md)
 - [Icon Picker](widgets/icon-picker.md)
 - [Avatar](widgets/avatar.md)

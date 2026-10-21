@@ -1,4 +1,4 @@
-# <div class="new-container">Chart <div class="new">New</div></div>
+# <div class="new-container">Charts <div class="new">New</div></div>
 
 ---
 
