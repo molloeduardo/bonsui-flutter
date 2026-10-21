@@ -54,6 +54,7 @@ export 'widgets/view_slider.dart';
 export 'widgets/chart.dart';
 
 // Enums exports
+export './enums/chart.dart';
 export './enums/button.dart';
 export './enums/text_field_type.dart';
 export './enums/info.dart';
