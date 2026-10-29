@@ -7,11 +7,17 @@ class BonsuiAppBar extends StatelessWidget
   @override
   Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
 
-  const BonsuiAppBar({super.key, this.title, this.titleChild, this.actions});
+  const BonsuiAppBar(
+      {super.key,
+      this.title,
+      this.titleChild,
+      this.actions,
+      this.backgroundColor});
 
   final String? title;
   final Widget? titleChild;
   final Widget? actions;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +27,23 @@ class BonsuiAppBar extends StatelessWidget
             primaryColor: BonsuiDesign.primaryColor,
           ),
           child: CupertinoNavigationBar(
-            backgroundColor: BonsuiDesign.useDarkMode
-                ? BonsuiDesign.blackColor
-                : BonsuiDesign.whiteColor,
+            backgroundColor: backgroundColor ??
+                (BonsuiDesign.useDarkMode
+                    ? BonsuiDesign.blackColor
+                    : BonsuiDesign.whiteColor),
             middle: _getTitle(),
             trailing: actions,
           ));
     } else {
       return AppBar(
-        backgroundColor: BonsuiDesign.useDarkMode
-            ? BonsuiDesign.blackColor
-            : BonsuiDesign.whiteColor,
+        backgroundColor: backgroundColor ??
+            (BonsuiDesign.useDarkMode
+                ? BonsuiDesign.blackColor
+                : BonsuiDesign.whiteColor),
         title: _getTitle(),
         actions: actions != null ? [actions!] : null,
-        foregroundColor: BonsuiDesign.useDarkMode ? BonsuiDesign.whiteColor : null,
+        foregroundColor:
+            BonsuiDesign.useDarkMode ? BonsuiDesign.whiteColor : null,
       );
     }
   }
