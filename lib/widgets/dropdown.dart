@@ -11,6 +11,9 @@ class BonsuiDropdown extends StatefulWidget {
   final ValueChanged<BonsuiDropdownItem> onChanged;
   final bool? showSelectedItem;
   final Icon? icon;
+
+  /// Custom trigger content, displayed instead of the default label and icon.
+  final Widget? child;
   final Color? color;
   final bool? showBorder;
   final bool? solid;
@@ -33,6 +36,7 @@ class BonsuiDropdown extends StatefulWidget {
     this.edgePadding = 8,
     this.preferDirection = DropdownDirection.auto,
     this.icon,
+    this.child,
     this.showSelectedItem = true,
     this.color,
     this.showBorder = false,
@@ -135,11 +139,13 @@ class _BonsuiDropdownState extends State<BonsuiDropdown>
     final menuWidth = _computeMenuWidth(context) + 48;
     double dxShift = 0;
 
-    buttonWidth = calcButtonWidth(
-        context: context,
-        label: widget.selectedIndex != null
-            ? widget.items[widget.selectedIndex!].label!
-            : '');
+    buttonWidth = widget.child != null
+        ? _buttonSize.width
+        : calcButtonWidth(
+            context: context,
+            label: widget.selectedIndex != null
+                ? widget.items[widget.selectedIndex!].label!
+                : '');
 
     final rightEdge = targetOffset.dx + menuWidth;
     final maxRight = screenSize.width - widget.edgePadding;
@@ -366,51 +372,59 @@ class _BonsuiDropdownState extends State<BonsuiDropdown>
           borderRadius: BorderRadius.circular(BonsuiDesign.borderRadius),
           onTap: widget.disabled != null && widget.disabled! ? null : _toggle,
           child: Ink(
-            height: 35,
-            width: calcButtonWidth(
-                context: context,
-                label: widget.selectedIndex != null
-                    ? widget.items[widget.selectedIndex!].label!
-                    : ''),
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            height: widget.child != null ? null : 35,
+            width: widget.child != null
+                ? null
+                : calcButtonWidth(
+                    context: context,
+                    label: widget.selectedIndex != null
+                        ? widget.items[widget.selectedIndex!].label!
+                        : ''),
+            padding: widget.child != null
+                ? EdgeInsets.zero
+                : const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
             decoration: BoxDecoration(
                 color: _getColor(),
                 borderRadius: BorderRadius.circular(BonsuiDesign.borderRadius),
                 border: Border.all(color: _getBorderColor(), width: 1)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                if (widget.showSelectedItem != null &&
-                    widget.showSelectedItem!) ...[
-                  if (hasValue) ...[
-                    if (widget.items[widget.selectedIndex!].icon != null) ...[
-                      Icon(
-                        widget.items[widget.selectedIndex!].icon,
-                        size: 18,
-                        color: _getTextColor(),
+            child: widget.child ??
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (widget.showSelectedItem != null &&
+                        widget.showSelectedItem!) ...[
+                      if (hasValue) ...[
+                        if (widget.items[widget.selectedIndex!].icon !=
+                            null) ...[
+                          Icon(
+                            widget.items[widget.selectedIndex!].icon,
+                            size: 18,
+                            color: _getTextColor(),
+                          ),
+                          const SizedBox(width: 8),
+                        ],
+                      ],
+                      Text(
+                        hasValue
+                            ? widget.items[widget.selectedIndex!].label!
+                            : '',
+                        style: TextStyle(
+                            color: _getTextColor(),
+                            fontSize: 13,
+                            fontWeight:
+                                hasValue ? FontWeight.w600 : FontWeight.w400,
+                            height: 0),
                       ),
                       const SizedBox(width: 8),
                     ],
+                    widget.icon ??
+                        Icon(
+                          BonsuiIcons.chevronDown,
+                          size: 18,
+                          color: _getTextColor(),
+                        ),
                   ],
-                  Text(
-                    hasValue ? widget.items[widget.selectedIndex!].label! : '',
-                    style: TextStyle(
-                        color: _getTextColor(),
-                        fontSize: 13,
-                        fontWeight:
-                            hasValue ? FontWeight.w600 : FontWeight.w400,
-                        height: 0),
-                  ),
-                  const SizedBox(width: 8),
-                ],
-                widget.icon ??
-                    Icon(
-                      BonsuiIcons.chevronDown,
-                      size: 18,
-                      color: _getTextColor(),
-                    ),
-              ],
-            ),
+                ),
           ),
         ),
       ),
