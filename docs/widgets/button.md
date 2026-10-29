@@ -55,3 +55,4 @@ BonsuiButton(label: 'Text', disabled: true);
 | `size` | `BonsuiButtonSize` | Define a fixed size for the button. Small, medium, large. Default is **medium** | ❌ |
 | `borderColor` | `Color` | Defines the color of the border | ❌ |
 | `useHapticFeedback` | `bool` | If true emits a lightImpact vibration when the user taps on the button | ❌ |
+| `selected` | `bool` | If true it applies a different background color, as if the button is pressed | ❌ |

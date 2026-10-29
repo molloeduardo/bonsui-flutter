@@ -136,4 +136,8 @@ BonsuiIcons.swapHoriz
 BonsuiIcons.sparkles
 BonsuiIcons.reddit
 BonsuiIcons.apple
+BonsuiIcons.skipNext
+BonsuiIcons.skipPrevious
+BonsuiIcons.repeat
+BonsuiIcons.attachment
 ```

@@ -1,3 +1,43 @@
+## [1.3.0] - 2026-10-29
+
+### Added
+
+- New icons: skipNext, skipPrevious, repeat, attachment
+- BonsuiAppBar Widget: custom background color
+- BonsuiButton: selected state
+- BonsuiDropdown Widget: custom child widget
+- BonsuiTextField Widget: minLines option
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- N/A
+
+### Deprecated
+
+- N/A
+
+### Removed
+
+- N/A
+
+### Security
+
+- N/A
+
+### Code
+
+- N/A
+
+### Other
+
+- N/A
+
+---
+
 ## [1.2.0] - 2026-10-21
 
 ### Added

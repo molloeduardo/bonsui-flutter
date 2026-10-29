@@ -58,4 +58,5 @@ BonsuiDropdown(
 | `dropdownWidth` | `double` | Custom dropdown width. Default is **200** | ❌ |
 | `dropdownMaxHeight` | `double` | Custom dropdown max height. Default is **260** | ❌ |
 | `preferDirection` | `DropdownDirection` | Choose where the dropdown items appear. Default is **auto** | ❌ |
+| `child` | `Widget` | Custom widget to show as a dropdown when closed | ❌ |
 | `context` | `BuildContext` | Custom BuildContext to open the dropdown in | ❌ |

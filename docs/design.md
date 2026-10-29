@@ -37,6 +37,22 @@ Future<void> main() async {
 }
 ```
 
+## Dark mode
+
+The dark mode automatically **changes the appearence of all the library components**.<br>
+You can set the dark mode manually or automatically change it based on the device settings.
+
+```dart
+// Manual change
+BonsuiDesign.useDarkMode = true;
+
+// Auto dark mode (it automatically changes all the UI elements theme, based on the device setting)
+BonsuiDesign.autoDarkMode = true;
+
+// Based on the system
+BonsuiDesign.useDarkMode = BonsuiUtils.isSystemDarkModeActive();
+```
+
 ## Padding sets
 
 A useful collection of **paddings** in order to keep the UI clean and equal. You can use the default ones, or add new ones in your **main**.
@@ -89,19 +105,6 @@ FadeIn(
   duration: BonsuiDesign.animationDurations[BonsuiAnimationDuration.medium],
   child: BonsuiText('Hello!')
 );
-```
-
-## Dark mode
-
-The dark mode automatically **changes the appearence of all the library components**.<br>
-You can set the dark mode manually or automatically change it based on the device settings.
-
-```dart
-// Manual change
-BonsuiDesign.useDarkMode = true;
-
-// Based on the system
-BonsuiDesign.useDarkMode = BonsuiUtils.isSystemDarkModeActive();
 ```
 
 ## Spacing

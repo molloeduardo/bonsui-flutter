@@ -1,6 +1,6 @@
 name: bonsui
 description: "A Flutter library that speeds up development with ready-to-use UI components, screens, and services to build high-quality iOS and Android apps from a single codebase"
-version: 1.2.0
+version: 1.3.0
 homepage: https://bonsui.eduardomollo.com/
 repository: https://github.com/molloeduardo/bonsui-flutter
 issue_tracker: https://github.com/moldart pub publish --dry-runloeduardo/bonsui-flutter/issues

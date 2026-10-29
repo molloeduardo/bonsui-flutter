@@ -162,6 +162,7 @@ These are the possible values:
 | `textColor`      | `Color`                    | Custom text field text color                                                                                          | ❌        |
 | `showCounter`    | `bool`                     | If set to true it shows a counter on the bottom right of the text field with the current text field characters length | ❌        |
 | `multiline`      | `bool`                     | If set to true the user can insert multiple lines                                                                     | ❌        |
+| `minLines`       | `int`                      | The minimum lines the user can insert                                                                                 | ❌        |
 | `maxLines`       | `int`                      | The maximum lines the user can insert                                                                                 | ❌        |
 | `readonly`       | `bool`                     | If set to true the user can't edit the text field value                                                               | ❌        |
 | `disabled`       | `bool`                     | If set to true the user can't edit the text field value and the field appears disabled                                | ❌        |
