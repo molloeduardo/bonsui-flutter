@@ -25,6 +25,7 @@ class BonsuiTextField extends StatefulWidget {
     this.type,
     this.multiline,
     this.maxLines,
+    this.minLines,
     this.shape,
     this.onSubmitted,
     this.showCounter,
@@ -58,6 +59,7 @@ class BonsuiTextField extends StatefulWidget {
   final BonsuiTextFieldType? type;
   final bool? multiline;
   final int? maxLines;
+  final int? minLines;
   final BonsuiShape? shape;
   final Function? onSubmitted;
   final bool? showCounter;
@@ -363,6 +365,7 @@ class _BonsuiTextFieldState extends State<BonsuiTextField> {
             },
             keyboardType: _getKeyboardType(),
             maxLines: widget.maxLines ?? 1,
+            minLines: widget.minLines ?? widget.maxLines ?? 1,
             controller: _effectiveController,
             onChanged: (value) {
               if (_isDateType) return;
@@ -446,6 +449,7 @@ class _BonsuiTextFieldState extends State<BonsuiTextField> {
       },
       keyboardType: _getKeyboardType(),
       maxLines: widget.maxLines ?? 1,
+      minLines: widget.minLines ?? widget.maxLines ?? 1,
       controller: _effectiveController,
       onChanged: (value) {
         if (_isDateType) return;
