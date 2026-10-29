@@ -26,6 +26,7 @@ class BonsuiButton extends StatefulWidget {
     this.size,
     this.borderColor,
     this.useHapticFeedback,
+    this.selected,
   });
 
   final BonsuiButtonType? type;
@@ -47,6 +48,7 @@ class BonsuiButton extends StatefulWidget {
   final BonsuiButtonSize? size;
   final Color? borderColor;
   final bool? useHapticFeedback;
+  final bool? selected;
 
   @override
   State<BonsuiButton> createState() => _BonsuiButtonState();
@@ -55,7 +57,10 @@ class BonsuiButton extends StatefulWidget {
 class _BonsuiButtonState extends State<BonsuiButton> {
   @override
   Widget build(BuildContext context) {
-    return _getChild();
+    return Semantics(
+      selected: widget.selected,
+      child: _getChild(),
+    );
   }
 
   Widget _getChild() {
@@ -254,10 +259,13 @@ class _BonsuiButtonState extends State<BonsuiButton> {
           : null,
       backgroundColor: widget.type == null ||
               widget.type == BonsuiButtonType.primary ||
-              widget.type == BonsuiButtonType.secondary
+              widget.type == BonsuiButtonType.secondary ||
+              widget.selected == true
           ? WidgetStateProperty.resolveWith<Color>(
               (Set<WidgetState> states) {
-                return _getSurfaceColor(states);
+                return widget.selected == true
+                    ? _getSelectedBackgroundColor(states)
+                    : _getSurfaceColor(states);
               },
             )
           : null,
@@ -332,7 +340,31 @@ class _BonsuiButtonState extends State<BonsuiButton> {
     }
   }
 
-  Color? _getOverlayColor() {
+  Color _getSelectedBackgroundColor(Set<WidgetState> states) {
+    final isFilledButton = widget.type == null ||
+        widget.type == BonsuiButtonType.primary ||
+        widget.type == BonsuiButtonType.secondary;
+    final isDisabled = states.contains(WidgetState.disabled) ||
+        (widget.isLoading != null && widget.isLoading!);
+    final hasActiveOverlay = states.contains(WidgetState.pressed) ||
+        states.contains(WidgetState.focused) ||
+        states.contains(WidgetState.hovered);
+
+    if (!isFilledButton) {
+      if (isDisabled || hasActiveOverlay) {
+        return Colors.transparent;
+      }
+      return _getOverlayColor();
+    }
+
+    final surfaceColor = _getSurfaceColor(states);
+    if (isDisabled || hasActiveOverlay) {
+      return surfaceColor;
+    }
+    return Color.alphaBlend(_getOverlayColor(), surfaceColor);
+  }
+
+  Color _getOverlayColor() {
     if (widget.color != null) {
       if (widget.type == null || widget.type == BonsuiButtonType.primary) {
         return BonsuiUtils.darken(widget.color!, 0.15).withAlpha(70);
