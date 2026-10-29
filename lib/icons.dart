@@ -254,4 +254,12 @@ class BonsuiIcons {
       BonsuiUtils.isIos() ? CupertinoIcons.sparkles : Icons.auto_awesome;
   static IconData get reddit => Icons.reddit;
   static IconData get apple => Icons.apple;
+  static IconData get skipNext =>
+      BonsuiUtils.isIos() ? CupertinoIcons.forward_fill : Icons.skip_next;
+  static IconData get skipPrevious =>
+      BonsuiUtils.isIos() ? CupertinoIcons.backward_fill : Icons.skip_previous;
+  static IconData get repeat =>
+      BonsuiUtils.isIos() ? CupertinoIcons.repeat : Icons.repeat;
+  static IconData get attachment =>
+      BonsuiUtils.isIos() ? CupertinoIcons.paperclip : Icons.attach_file;
 }
